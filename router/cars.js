@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
             ?
                 res.status(200).json(car)
             :
-                res.status(404).json({ message: "Account not found."})
+                res.status(404).json({ message: "Car not found."})
     }
     catch (err) {
         res.status(500).json({ message: err.message });
@@ -36,21 +36,21 @@ router.get('/:id', async (req, res) => {
 });
 
 // ##########
-//    Account
+//    POST
 // ##########
 
 router.post('/', async (req, res) => {
     const {VIN, Make, Model, Mileage} = req.body;
 
     try {
-        const newCar = await db('cars').insert({ VIN: VIN, Make: Make, Model: Model, Mileage: Mileage })
+        const newCar = await db('cars').insert({ VIN: VIN, Make: Make, Model: Model, Mileage: Mileage });
         
         if (newCar.length) {
             const newCarEntry = await db("cars").where({ id: newCar[0]});
-            res.status(200).json(newCarEntry)
+            res.status(200).json(newCarEntry);
         }
         else {
-            res.status(400).json({ message: "Car was not added"})
+            res.status(400).json({ message: "Car was not added"});
         }
     }
     catch (err) {
