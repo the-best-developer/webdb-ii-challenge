@@ -10,7 +10,7 @@ exports.seed = function(knex) {
         {VIN: "5FNRL18613B046732", Make: "Honda", Model: "2003 Odyssey", Mileage: "74910", Title: "Clean"},
         {VIN: "JH4KA4640JC021212", Make: "Acura", Model: "1988 Legend", Mileage: "113000", Title: "Salvage"},
         {VIN: "WBAWC73578E067076", Make: "BMW", Model: "2008 3 Series", Mileage: "105029"},
-        {VIN: "1G8AY12P84Z202013", Make: "Saturn", Model: "2004 Ion Red Line", Mileage: "168164"},
+        {VIN: "1G8AY12P84Z202013", Make: "Saturn", Model: "2004 Ion Red Line", Mileage: "168164"}
       ]);
     });
 };
